@@ -1,25 +1,22 @@
- 
- "use client";
- import { useRouter } from "next/navigation";
- export default function HeroSection({name}) {
-    const router = useRouter();
-  return (
- <div className="relative w-full h-[400px] flex flex-col items-center justify-center text-center overflow-hidden ">
-        <div
-          className="absolute inset-0 bg-cover bg-center brightness-60"
-          style={{
-            backgroundImage:
-              "url('https://st.depositphotos.com/3063135/4654/i/450/depositphotos_46548367-stock-photo-japanese-seafood-sushi-on-black.jpg')",
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="z-10">
-          <h1 className="text-6xl text-white  hover:text-yellow-300 font-bold mb-4">{name}</h1>
-          <div className="flex px-10 text-white">
-<h3 className="hover:text-red-500 cursor-pointer brightness-100 ml-4 font-bold" 
-onClick={(e)=>{router.push("/")}}>home</h3>
-<h3 className="font-bold  ">/{name}</h3>
-</div>
+"use client"
+import Link from "next/link"
+export default function Navbar(){
+  return(
+    <nav className="bg-yellow-300 border-b">
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+        <h1 className="text-2xl font-semibold text-black">
+          ShopRaj
+        </h1>
+        <div className="flex gap-8  text-black text-md">
+
+          <Link href="/">Home</Link>
+          <Link href="/cart">Cart</Link>
+          <Link href="/login">Login</Link>
+
         </div>
-      </div >
-  )}
+
+      </div>
+
+    </nav>
+  )
+}
